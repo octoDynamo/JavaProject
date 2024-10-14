@@ -1,21 +1,21 @@
 package library;
 
-public class Book {
-    // Private Attributes
-    private String title;
-    private String author;
+public class Book extends Libraryitem {
+    // Additional attributes specific to Book
     private boolean isAvailable;
 
     // Constructor
     public Book(String title, String author) {
-        this.title = title;
-        this.author = author;
-        this.isAvailable = true;  // The book is available when created
+        super(title, author);
+        this.isAvailable = true;
     }
 
-    // Public Methods
+    @Override
+    public String getItemType() {
+        return "Book";
+    }
 
-    // Borrow the book if available
+    // Additional methods specific to Book
     public void borrowBook() {
         if (isAvailable) {
             isAvailable = false;
@@ -25,14 +25,13 @@ public class Book {
         }
     }
 
-    // Return the book
     public void returnBook() {
         isAvailable = true;
         System.out.println("Returned successfully!");
     }
 
-    // Get book information
-    public String getBookInfo() {
-        return "Book Title: \"" + title + "\"\nAuthor: \"" + author + "\"\nAvailability: " + isAvailable;
+    @Override
+    public String getItemInfo() {
+        return super.getItemInfo() + "\nAvailability: " + isAvailable;
     }
 }

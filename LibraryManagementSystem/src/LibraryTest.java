@@ -1,25 +1,18 @@
-import library.Book;
+import library.*;
 
-public class LibraryTest {
+class LibraryTest {
     public static void main(String[] args) {
         // Create an instance of Book
-        Book myBook = new Book("Java Programming", "John Doe");
+        Libraryitem myBook = new Book("Java Programming", "John Doe");
 
-        // Display book info
-        System.out.println(myBook.getBookInfo());
+        // Create an instance of EBook
+        Libraryitem myEBook = new Ebook("Advanced Java", "Jane Smith", 5.5, "PDF");
 
-        // Borrow the book
-        System.out.println("Borrowing the book...");
-        myBook.borrowBook();
+        // Demonstrate polymorphism
+        System.out.println("Book Info:");
+        System.out.println(myBook.getItemInfo());
 
-        // Display book info after borrowing
-        System.out.println(myBook.getBookInfo());
-
-        // Return the book
-        System.out.println("Returning the book...");
-        myBook.returnBook();
-
-        // Display book info after returning
-        System.out.println(myBook.getBookInfo());
+        System.out.println("\nEBook Info:");
+        System.out.println(myEBook.getItemInfo());
     }
 }
