@@ -1,15 +1,11 @@
 1. Store the list of products with details (ID, name, quantity):
-
     HashMap<Integer, Product>: Using a HashMap allows us to store products with a unique product ID as the key, enabling quick lookup of product details by ID. The Product class will hold the ID, name, and quantity.
 
 2. Quickly look up a product by its ID:
-
     HashMap offers O(1) average time complexity for lookups, making it ideal for quick retrieval by product ID.
 
 3. Sort the list of products by name:
-
     ArrayList<Product> with Collections.sort(): An ArrayList of products can be sorted using Collections.sort() with a custom comparator to sort by name.
 
 4.Track daily shipments in the order they arrive:
-
     ArrayList<Integer>: To store product IDs in the order they arrive each day, an ArrayList is appropriate because it maintains insertion order.
